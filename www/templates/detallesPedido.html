@@ -1,0 +1,47 @@
+<ion-view view-title="Menu" name="menu-view" ng-init="init()" cache-view="false">
+  <ion-header-bar class="app-icon-header">
+    <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()"></button>
+  </ion-header-bar>
+  <ion-content style="background: url(img/login.png) center; background-size: cover;">
+    <div class="padding-top hero no-header flat">
+      <div class="content">
+        <div class="app-icon"></div>
+      </div>
+    </div>
+    <h1>Detalles del <a class="yellow-font">Pedido</a></h1>
+    <div class="container">
+      <div class="row">
+        <div class="col historial-detail-text2">Pedido: {{pedidoSeleccionado.id}}</div>
+        <div class="col historial-detail-text2">Estado del Pedido: {{pedidoSeleccionado.name_status}}
+         <a ng-switch on="pedidoSeleccionado.order_status_id">
+              <img style="height:15px; width:15px; margin-left:2%" ng-switch-when="1" src="img/inProgress.png">
+              <img style="height:15px; width:15px; margin-left:2%" ng-switch-when="2" src="img/inProgress.png">
+              <img style="height:15px; width:15px; margin-left:2%" ng-switch-when="3" src="img/inProgress.png">
+              <img style="height:15px; width:15px; margin-left:2%" ng-switch-when="4" src="img/success.png">
+              <img style="height:15px; width:15px; margin-left:2%" ng-switch-when="5" src="img/success.png">
+              <img style="height:15px; width:15px; margin-left:2%" ng-switch-when="6" src="img/cancelled.png">
+              <img style="height:15px; width:15px; margin-left:2%" ng-switch-default src="img/inProgress.png">
+            </a>
+       </div>
+     </div>
+     <div class="row">
+      <div class="col historial-detail-text2">Nombre del Mensajero: {{pedidoSeleccionado.name_delivery}}</div>
+      <div class="col historial-detail-text2">Número de Contacto: {{pedidoSeleccionado.phone_user}}</div>
+    </div>
+    <div class="row">
+      <div class="col historial-detail-text2">Total: ${{pedidoSeleccionado.cost}}</div>
+    </div>
+    <div class="card custom-card" ng-repeat="d in detalles_pedido">
+      <div class="item item-divider cell-2">
+        <a class="button-font">Lugar inicio: {{d.initial_address}} </a>
+      </div>
+      <div class="item item-text-wrap">
+        <a class="historial-detail-text">Observaciones: {{d.observations}}</a>
+      </div>
+      <div class="item item-divider cell-2">
+        <a class="button-font">Lugar fin:{{d.final_address}}</a>
+      </div>
+    </div>
+  </div>
+</ion-content>
+</ion-view>

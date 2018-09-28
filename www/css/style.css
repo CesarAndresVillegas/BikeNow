@@ -1,0 +1,381 @@
+.app-icon {
+    background-color: #fff;
+    background: url('../img/logo.png') center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 100px;
+    margin: 0 auto;
+    width: 100px;
+}
+
+.app-icon-header {
+    background-color: #FBAA1D !important;
+}
+
+.button-font {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.button-line0 {
+    border-width: 0px;
+}
+
+.card-font {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 10% !important;
+}
+
+.cell-1 {
+  background-color: #FE642E;
+}
+.cell-2 {
+  background-color: #FA8258;
+}
+.cell-3 {
+  background-color: #FAAC58;
+}
+.cell-4 {
+  background-color: #DF0101;
+}
+
+.cell-row > div {
+  flex: 1;
+  flex-grow: 1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cell-row-1 {
+  background-color: #000;
+}
+
+.cell-row-2 {
+  background-color: #ccc;
+}
+
+.center-control {
+    width: 70% !important;
+    margin-left: 15%;
+    margin-right: 15%
+}
+
+.center-control2 {
+    width: 60% !important;
+    margin-left: 20%;
+    margin-right: 20%
+}
+
+.center-control3 {
+    width: 30% !important;
+    margin-left: 32%;
+    margin-right: 38%
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;  
+}
+
+.container > .cell-row {
+  flex: 1;
+  display: flex;
+}
+
+.container i[class^="ion-"] {
+  font-size: 90px;
+}
+
+.custom-back-transparent {
+    background-color: Transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: solid white;
+}
+
+.custom-card {
+    border-radius: 20px !important;
+    border: none !important;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.8) !important;
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+    width: 96% !important;
+}
+
+.custom-date {
+    background-color: transparent !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    text-align: left !important;
+    line-height: 1 !important;
+    font-weight: bold !important;
+    text-shadow: 0 1px 0px #000;
+}
+
+.custom-date-select {
+    float: left;
+    margin-right: 1px;
+}
+
+.custom-icon-white {
+    color: white;
+}
+
+.custom-icon-yellow {
+    color: #FBAA1D !important;
+}
+
+.footer-font {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer-transparent {
+    background-color: Transparent;
+    border-top: solid white;
+}
+
+.gray-button {
+    background-color: Transparent;
+    border: solid;
+    border-color: #999;
+    border-radius: 8px;
+}
+
+.gray-button-font {
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.grid-header-font {
+    font-size: 18px !important;
+    color: #333 !important;
+    font-weight: bold !important;
+}
+
+.grid-row-font {
+    font-size: 14px !important;
+    color: black !important;
+}
+
+h1 {
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h3 {
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+
+.historial-detail-text {
+    color: #AAA !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    line-height: 1 !important;
+}
+
+.historial-detail-text1 {
+    color: #111 !important;
+    font-size: 16px !important;
+    text-align: left !important;
+    line-height: 1 !important;
+}
+
+.historial-detail-text2 {
+    color: #fff !important;
+    font-size: 16px !important;
+    text-align: left !important;
+    line-height: 1 !important;
+    margin-left: 5% !important;
+    font-weight: bold !important;
+    text-shadow: 0 1px 0px #000;
+}
+
+.historial-title1 {
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Avenir" !important;
+}
+
+.historial-title2 {
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Avenir" !important;
+}
+
+.historial-list-text {
+    color: #AAA !important;
+    font-size: 10px !important;
+    text-align: left !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+}
+
+.input-login {
+    color: #fff !important;
+    font-size: 16px !important;
+    text-align: left !important;
+    font-weight: bold;
+}
+
+.input-white-screen {
+    color: #555 !important;
+    font-size: 18px !important;
+    text-align: left !important;
+    font-weight: bold !important;
+    width: 80% !important;
+    margin-left: 5%;
+    margin-right: 15%
+}
+
+.input-register {
+    color: #fff !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    font-weight: bold;
+}
+
+.input-unline {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: solid;
+}
+
+.menu-title {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 75%;
+}
+
+.placeholder-login::-webkit-input-placeholder {
+    color: #fff !important;
+    font-size: 16px !important;
+    text-align: left !important;
+}
+
+.placeholder-login:-moz-placeholder {
+    color: #fff !important;
+    font-size: 16px !important;
+    text-align: left !important;
+}
+
+.placeholder-login::-moz-placeholder {
+    color: #fff !important;
+    font-size: 16px !important;
+    text-align: left !important;
+}
+
+.placeholder-login:-ms-input-placeholder {
+    color: #fff !important;
+    font-size: 16px !important;
+    text-align: left !important;
+}
+
+.placeholder-register::-webkit-input-placeholder {
+    color: #fff !important;
+    font-size: 14px !important;
+    text-align: left !important;
+}
+
+.placeholder-register:-moz-placeholder {
+    color: #fff !important;
+    font-size: 14px !important;
+    text-align: left !important;
+}
+
+.placeholder-register::-moz-placeholder {
+    color: #fff !important;
+    font-size: 14px !important;
+    text-align: left !important;
+}
+
+.placeholder-register:-ms-input-placeholder {
+    color: #fff !important;
+    font-size: 14px !important;
+    text-align: left !important;
+}
+
+.scroll /* because the <ion-content> content is placed inside a div.scroll */
+{
+  height: 100%;
+}
+
+.span-login {
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+}
+
+.transparent-border {
+    border-top: transparent !important;
+    border-left: transparent !important;
+    border-right: transparent !important;
+    border-bottom: transparent !important;
+}
+
+.transparent-button {
+    background-color: Transparent;
+    border: solid;
+    border-color: white;
+    border-radius: 8px;
+}
+
+.transparent-button1 {
+    background-color: Transparent;
+    border: none;
+    border-color: transparent;
+}
+
+.transparent-input {
+    background-color: transparent !important;
+}
+
+.title-text {
+    color: #FBAA1D;
+    font-size: 22px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.yellow-font {
+    color: #FBAA1D;
+    text-shadow: 0 1px 0px #000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+

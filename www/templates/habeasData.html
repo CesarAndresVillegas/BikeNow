@@ -1,0 +1,37 @@
+<ion-view view-title="Carga Masiva" name="menu-view" ng-init="init()" cache-view="false">
+  <ion-header-bar class="app-icon-header">
+    <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()"></button>
+  </ion-header-bar>
+  <ion-content style="background: url(img/login.png) center; background-size: cover;">
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row row-center center-control">
+        <label class="col item item-input transparent-input transparent-border">
+          <input id="fileUploaded" class="input-register" type="file">
+        </label>
+        <button class="col transparent-button center-control button button-block ion-ios-cloud-upload icon-left custom-icon-yellow" ng-click="cargarPdf()" ng-disabled="controlDisabled">
+          <a class="button-font">CARGAR DOCUMENTO (PDF)</a>
+        </button>
+      </div>
+      <br>
+      <br>
+      <div class="row item center-control grid-header-font">
+        <div class="col col-10">id</div>
+        <div class="col col-50">URL</div>
+        <div class="col col-20">Fecha</div>
+        <div class="col col-10">Activo</div>
+      </div>
+      <ion-scroll direction="y" style="height: 350px;">
+        <div class="row item center-control grid-row-font" ng-repeat="r in listaTerms" ng-click="gridClick($index)">
+          <div class="col col-10">{{r.id}}</div>
+          <div class="col col-50">{{r.name}}</div>
+          <div class="col col-20">{{r.register_date}}</div>
+          <div class="col col-10">{{r.active}}</div>
+        </div>
+      </ion-scroll>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,78 @@
+<ion-view view-title="Petición" name="menu-view" ng-init="init()" cache-view="false">
+  <ion-header-bar class="app-icon-header">
+    <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()"></button>
+  </ion-header-bar>
+  <ion-content style="background: url(img/login.png) center; background-size: cover;">
+    <div class="container">
+      <br>
+      <h1>Registrar <a class="yellow-font">Usuario</a></h1>
+      <div class="row center-control">
+        <label class="col item item-input custom-back-transparent">
+          <input class="input-register placeholder-register" type="text" placeholder="Nombre" ng-model="userRegistro.name" spellcheck="false">
+        </label>
+        <label class="col item item-input custom-back-transparent">
+          <input class="input-register placeholder-register" type="text" placeholder="Apellido" ng-model="userRegistro.last_name" spellcheck="false">
+        </label>
+      </div>
+      <div class="row center-control">
+        <label class="col item item-input custom-back-transparent">
+          <input class="input-register placeholder-register" type="text" placeholder="Correo Electrónico" ng-model="userRegistro.mail" spellcheck="false" pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" required>
+        </label>
+        <label class="col item item-input custom-back-transparent">
+          <input class="input-register placeholder-register" type="text" placeholder="Teléfono de Contacto" ng-model="userRegistro.phone" spellcheck="false">
+        </label>
+      </div>
+      <div class="row center-control">
+        <label class="item item-input custom-back-transparent col">
+          <input class="input-register placeholder-register" type="password" placeholder="Constraseña" ng-model="userRegistro.password" spellcheck="false">
+        </label>
+        <label class="item item-input custom-back-transparent col">
+          <input class="input-register placeholder-register" type="password" placeholder="Confirmar Constraseña" ng-model="userRegistro.passwordConfirm" spellcheck="false">
+        </label>
+      </div>
+      <div class="row center-control">
+        <label class="col item item-input custom-back-transparent">
+          <input class="input-register placeholder-register" type="text" placeholder="Placa" ng-model="userRegistro.plate" spellcheck="false">
+        </label>
+        <label class="col item item-input item-select custom-back-transparent">
+          <div class="row">
+            <div class="col input-register placeholder-register" style="vertical-align: center;">
+              Tipo Usuario:
+            </div>
+            <select class="col transparent-input transparent-border input-register placeholder-register" ng-options="option.name for option in listaRoles track by option.id" ng-model="userRegistro.rol_id">
+            </select>
+          </div>
+        </label>
+      </div>
+      <div class="row row-center center-control">
+        <label class="col item item-input transparent-input transparent-border">
+          <input id="fileUploaded" class="input-register" type="file">
+        </label>
+        <div class="col">
+          <ion-checkbox class="item input-register transparent-input transparent-border" ng-checked="tarifa.active" ng-model="userRegistro.active">Activo</ion-checkbox>
+        </div>
+      </div>
+      <br>
+      <button class="transparent-button center-control button button-block ion-android-list icon-left custom-icon-yellow" ng-click="tratarUsuario()" ng-disabled="controlDisabled">
+        <a class="button-font">CREAR USUARIO/ MODIFICAR USUARIO</a>
+      </button>
+      <button class="transparent-button center-control button button-block ion-loop icon-left custom-icon-yellow" ng-click="modificarPass()" ng-disabled="controlDisabled">
+        <a class="button-font">MODIFICAR CONTRASEÑA</a>
+      </button>
+      <div class="row item center-control grid-header-font">
+        <div class="col col-25">Nombre</div>
+        <div class="col col-25">Apellido</div>
+        <div class="col col-33">Correo</div>
+        <div class="col col-10">Activo</div>
+      </div>
+      <ion-scroll direction="y" style="height: 200px;">
+        <div class="row item center-control grid-row-font" ng-repeat="u in listaUsuarios" ng-click="gridClick($index)">
+          <div class="col col-25">{{u.name}}</div>
+          <div class="col col-25">{{u.last_name}}</div>
+          <div class="col col-33">{{u.mail}}</div>
+          <div class="col col-10">{{u.active}}</div>
+        </div>
+      </ion-scroll>
+    </div>
+  </ion-content>
+</ion-view>

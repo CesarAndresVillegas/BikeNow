@@ -1,0 +1,42 @@
+<ion-view view-title="Registrar Tarifas" name="menu-view" ng-init="init()" cache-view="false">
+    <ion-header-bar class="app-icon-header">
+        <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()"></button>
+    </ion-header-bar>
+    <ion-content style="background: url(img/login.png) center; background-size: cover;">
+        <div class="padding-top hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Registrar <a class="yellow-font">Tarifas</a></h1>
+            <label class="item item-input custom-back-transparent center-control">
+                <input class="input-register placeholder-register" type="text" placeholder="Nombre tarifa..." ng-model="tarifa.name" spellcheck="false">
+            </label>
+            <label class="item item-input custom-back-transparent center-control">
+                <input class="input-register placeholder-register" type="number" placeholder="Costo tarifa..." ng-model="tarifa.cost" spellcheck="false">
+            </label>
+            <label class="item item-input custom-back-transparent center-control">
+                <input class="input-register placeholder-register" type="number" placeholder="Costo retorno..." ng-model="tarifa.return" spellcheck="false">
+            </label>
+            <ion-checkbox class="item input-register custom-back-transparent center-control" ng-checked="tarifa.active" ng-model="tarifa.active">Activa</ion-checkbox>
+            <button class="transparent-button center-control button button-block ion-android-list icon-left custom-icon-yellow" ng-click="tratarTarifa()" ng-disabled="controlDisabled">
+                <a class="button-font">Crear / Modificar Tarifa</a>
+            </button>
+            <div class="row item center-control grid-header-font">
+                <div class="col col-50">Nombre</div>
+                <div class="col col-20">Costo</div>
+                <div class="col col-20">Retorno</div>
+                <div class="col col-10">Activa</div>
+            </div>
+            <ion-scroll direction="y" style="height: 200px;">
+                <div class="row item center-control grid-row-font" ng-repeat="t in listaTarifas" ng-click="gridClick($index)">
+                    <div class="col col-50">{{t.name}}</div>
+                    <div class="col col-20">{{t.cost}}</div>
+                    <div class="col col-20">{{t.return_cost}}</div>
+                    <div class="col col-10">{{t.active}}</div>
+                </div>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

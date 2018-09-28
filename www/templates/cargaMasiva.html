@@ -1,0 +1,21 @@
+<ion-view view-title="Carga Masiva" name="menu-view" ng-init="init()" cache-view="false">
+  <ion-header-bar class="app-icon-header">
+    <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()"></button>
+  </ion-header-bar>
+  <ion-content style="background: url(img/login.png) center; background-size: cover;">
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row row-center center-control">
+        <label class="col item item-input transparent-input transparent-border">
+          <input id="fileUploaded" class="input-register" type="file">
+        </label>
+        <button class="col transparent-button center-control button button-block ion-ios-cloud-upload icon-left custom-icon-yellow" ng-click="cargarUsuarios()" ng-disabled="controlDisabled">
+          <a class="button-font">CARGAR USUARIOS</a>
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

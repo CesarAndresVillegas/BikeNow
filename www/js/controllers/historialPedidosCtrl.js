@@ -1,0 +1,116 @@
+angular.module('myApp', ["ngCsv"])
+angular.module('starter')
+    .controller('historialPedidosCtrl', function($scope, $rootScope, $ionicPopup, $state, $http, SharedService) {
+        $scope.historialLista = [];
+        $scope.consulta = {};
+
+        $scope.CSVFilename = "Consulta_" + $scope.CurrentDate + ".csv";
+        $scope.CSVSeparator = ",";
+
+        $scope.flag30 = true;
+        $scope.flag31 = true;
+
+        $scope.dayList = [];
+
+        $scope.irAtras = function() {
+            $state.go("menu")
+        };
+
+        $scope.selectDayList = function() {
+            if ($scope.consulta.month == 1 || $scope.consulta.month == 3 || $scope.consulta.month == 5 || $scope.consulta.month == 7 || $scope.consulta.month == 8 || $scope.consulta.month == 10 || $scope.consulta.month == 12) {
+                $scope.flag30 = true;
+                $scope.flag31 = true;
+            } else if ($scope.consulta.month == 2) {
+                $scope.flag30 = false;
+                $scope.flag31 = false;
+            } else {
+                $scope.flag30 = true;
+                $scope.flag31 = false;
+            }
+        };
+
+        $scope.verDetalles = function(index) {
+            SharedService.objSeleccioado = $scope.historialLista[index];
+            $state.go("detallesPedido");
+        };
+
+        $scope.consultarOrdenes = function() {
+
+            if (!$scope.consulta.monthInit) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Seleccione el mes inicial'
+                });
+                return;
+            }
+
+            if (!$scope.consulta.monthFin) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Seleccione el mes final'
+                });
+                return;
+            }
+
+            if (!$scope.consulta.dayInit) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Seleccione el dia inicial'
+                });
+                return;
+            }
+
+            if (!$scope.consulta.dayFin) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Seleccione el dia final'
+                });
+                return;
+            }
+
+            if (!$scope.consulta.yearInit) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Seleccione el año inicial'
+                });
+                return;
+            }
+
+            if (!$scope.consulta.yearFin) {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Seleccione el año final'
+                });
+                return;
+            }
+
+            var fechaInicio = $scope.consulta.yearInit + "-" + $scope.consulta.monthInit + "-" + $scope.consulta.dayInit;
+            var fechaFinal = $scope.consulta.yearFin + "-" + $scope.consulta.monthFin + "-" + $scope.consulta.dayFin;
+
+            // Consultar
+            $http.get($rootScope._host + 'orders/reportOrders/' + fechaInicio + '/' + fechaFinal)
+                .success(function(data) {
+                    if (data.state == "1") {
+                        $scope.historialLista = data.data;
+                        var confirmPopup = $ionicPopup.confirm({
+                            title: 'Generar Excel',
+                            template: 'Desea generar un archivo de excel con la informacion?'
+                        });
+                        confirmPopup.then(function(res) {
+                            if (res) {
+                                $scope.exportData();
+                            }
+                        })
+                    } else {
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Error',
+                            template: data.message
+                        });
+                    }
+                });
+        };
+
+        $scope.exportData = function() {
+            alasql("SELECT * INTO XLSX('historial_pedidos.xlsx',{headers:true}) FROM ? ", [$scope.historialLista]);
+        };
+    })

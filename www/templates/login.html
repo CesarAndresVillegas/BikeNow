@@ -1,0 +1,29 @@
+<ion-view view-title="Login" align-title="left" cache-view="false">
+	<ion-content class="padding" style="background: url(img/login.png) center; background-size: cover;">
+		<div class="padding-top hero no-header flat">
+			<div class="content">
+				<br>
+				<br>
+				<div class="app-icon"></div>
+				<h1>Bienvenido a <a class="yellow-font">Bike</a>Now</h1>
+			</div>
+		</div>
+		<br>
+		<label class="center-control input-unline item item-input item-floating-label placeholder-login">
+			<span class="input-label span-login">Correo:</span>
+			<input class="input-login placeholder-login" type="text" placeholder="Correo..." spellcheck="false" ng-model="usuario.user">
+		</label>
+		<label class="center-control input-unline item item-input item-floating-label ">
+			<span class="input-label span-login">Contraseña:</span>
+			<input class="input-login placeholder-login" type="password" placeholder="Contraseña..." spellcheck="false" ng-model="usuario.pwd">
+		</label>
+		<br>
+		<br>
+		<button class="button-small transparent-button center-control button button-block ion-android-person-add icon-left custom-icon-yellow" ng-click="login()" ng-disabled="controlDisabled">
+			<a class="button-font">INGRESAR</a>
+		</button>
+	</ion-content>
+	<div class="bar bar-footer footer-transparent">
+  		<button ng-click="recuperarPass()" class="button transparent-button1" ng-disabled="controlDisabled"><a class="footer-font">¿Olvidaste la contraseña?</a></button>
+	</div>
+</ion-view>
